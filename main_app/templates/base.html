@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, intitial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>COVID Info</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <header class="navbar-fixed">
+        <nav>
+            <div class="nav-wrapper">
+                <ul>
+                    <li><a href="/" class="left brand-logo">COVID Testing and Vaccine Info</a></li>
+                </ul>
+                <ul class="right">
+                    <li><a href="{% url 'symptoms' %}">COVID Symptoms</a></li>
+                    <li><a href="{% url 'testing' %}">Find a Testing Site</a></li>
+                    <li><a href="{% url 'vaccines' %}">Get Vaccinated</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main class="container">
+        {% block content %}
+        {% endblock %}
+    </main>
+    <footer class="page-footer">All Rights Reserved, &copy; 2021 Eric's COVID Website for GTB</footer>
+</body>
+</html>
