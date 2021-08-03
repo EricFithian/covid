@@ -1,1 +1,1 @@
-web: gunicorn covid_walkthrough.wsgi
+web: gunicorn covid-walkthrough.wsgi
