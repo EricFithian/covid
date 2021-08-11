@@ -17,6 +17,7 @@ class Test(models.Model):
     opening = models.IntegerField()
     closing = models.IntegerField()
     address = models.TextField()
+    price = models.DecimalField(decimal_places=2, max_digits=10, default=0.00)
 
     def __str__(self):
         return self.name
@@ -35,8 +36,10 @@ class Vaccine(models.Model):
 class Vaccinating(models.Model):
     patient = models.ForeignKey(Patient, on_delete=models.CASCADE, default=1, related_name='pvaccinating')
     site = models.ForeignKey(Vaccine, on_delete=models.CASCADE, default=1, related_name='svaccinating')
+    date = models.DateField()
 
 
 class Testing(models.Model):
     patient = models.ForeignKey(Patient, on_delete=models.CASCADE, default=1, related_name='ptesting')
     site = models.ForeignKey(Test, on_delete=models.CASCADE, default=1, related_name='stesting')
+    date = models.DateField()
